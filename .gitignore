@@ -1,0 +1,17 @@
+node_*
+dist
+.env
+.DS_Store
+.idea
+.vscode
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.pid
+*.seed
+*.pid.lock
+*.env*
+*.local
+*.cache
