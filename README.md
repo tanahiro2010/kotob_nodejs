@@ -18,7 +18,7 @@ const kotob = new Kotob({
 
 (async () => {
   const result = await kotob.translate('Hello, world!', 'en', 'ja');
-  console.log(result); // こんにちは、世界！
+  console.log(result); // こんにちは、世界！（LLM翻訳ゆえに差異が出る可能性があります）
 })();
 ```
 ## API
