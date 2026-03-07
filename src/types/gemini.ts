@@ -22,3 +22,11 @@ type Model =
     'deep-research-pro-preview-12-2025' |
     'gemini-embedding-001' |
     'gemini-robotics-er-1.5-preview';
+
+
+type GeminiPayload = {
+    model: Model;
+    
+}
+
+export type { GeminiPayload, Model };
