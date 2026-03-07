@@ -1,6 +1,8 @@
+import { Model } from "./gemini";
+
 type _Kotob = {
     setKey(key: string): void;
-    getKey(): string;
+    getKey(): string | null | undefined;
 
     setModel(model: string): void;
     getModel(): string;
@@ -8,12 +10,14 @@ type _Kotob = {
     setEndpoint(endpoint: string): void;
     getEndpoint(): string;
 
-    translate(text: string, targetLanguage: string): Promise<string>;
+    translate(text: string): Promise<string>;
+    translate(text: string, sourceLanguage: string): Promise<string>;
+    translate(text: string, sourceLanguage: string, targetLanguage: string): Promise<string>;
 }
 
 type KotobConfig = {
     key: string;
-    model?: string;
+    model?: Model;
     endpoint?: string;
 }
 
