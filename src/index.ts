@@ -1,4 +1,4 @@
-import _Kotob, { KotobConfig, Model } from "./types";
+import _Kotob, { GeminiPayload, KotobConfig, Model } from "./types";
 
 class Kotob implements _Kotob {
     private key: string | undefined | null;
@@ -45,6 +45,9 @@ class Kotob implements _Kotob {
         }
 
         const endpoint = this.endpoint.replace("{model}", this.model);
+        const payload: GeminiPayload = {
+            model: this.model,
+        }
         const response = await fetch(endpoint, {
             method: "POST",
             headers: {
