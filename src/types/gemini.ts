@@ -23,10 +23,36 @@ type Model =
     'gemini-embedding-001' |
     'gemini-robotics-er-1.5-preview';
 
+type ContentPayload = {
+    role:    'user' | 'system' | 'assistant';
+    content: string;
+}
+
+type ArrayConfig = {
+    type: "array";
+    items: {
+        
+    }
+}
 
 type GeminiPayload = {
     model: Model;
-    
+    contents: {
+        parts: Array<{ text: string; }>;
+    }
+    generationConfig?: {
+        responseMimeType: "application/json";
+        responseJsonSchema: {
+            type: "object";
+            proparties: {
+                [key: string]: {
+                    type: "string" | "number" | "boolean" | "object" | "array";
+                    description: string;
+                }
+            }
+        }
+    }
+
 }
 
 export type { GeminiPayload, Model };
