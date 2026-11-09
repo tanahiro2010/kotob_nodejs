@@ -47,6 +47,13 @@ class Kotob implements _Kotob {
         const endpoint = this.endpoint.replace("{model}", this.model);
         const payload: GeminiPayload = {
             model: this.model,
+            contents: {
+                parts: [
+                    {
+                        text
+                    }
+                ]
+            }
         }
         const response = await fetch(endpoint, {
             method: "POST",
